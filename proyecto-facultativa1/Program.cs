@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using proyecto_facultativa1.Data;
+using proyecto_facultativa1.Dtos;
+using proyecto_facultativa1.Repository;
+using proyecto_facultativa1.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +17,9 @@ builder.Services.AddSwaggerGen();
 //Inyeccion de Entity Framework
 builder.Services.AddDbContext<ProductManagementContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped <ICrud<Productos>, ProductoRepository>();
+builder.Services.AddScoped<ICrudServices<ProductoResponseDto, ProductoInsertDto, ProductoUpdateDto>, ProductoServices>();
 
 var app = builder.Build();
 

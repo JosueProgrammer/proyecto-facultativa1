@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace proyecto_facultativa1.Data;
 
-public partial class Pedido
+public partial class Pedidos
 {
     public int Id { get; set; }
 
@@ -13,7 +13,7 @@ public partial class Pedido
 
     public decimal Total { get; set; }
 
-    public virtual Cliente Cliente { get; set; } = null!;
+    public virtual Clientes Cliente { get; set; } = null!;
 
-    public virtual ICollection<DetallePedido> DetallePedidos { get; set; } = new List<DetallePedido>();
+    public virtual ICollection<DetallePedidos> DetallePedidos { get; set; } = new List<DetallePedidos>();
 }

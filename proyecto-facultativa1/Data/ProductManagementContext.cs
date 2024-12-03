@@ -15,19 +15,19 @@ public partial class ProductManagementContext : DbContext
     {
     }
 
-    public virtual DbSet<Cliente> Clientes { get; set; }
+    public virtual DbSet<Clientes> Clientes { get; set; }
 
-    public virtual DbSet<DetallePedido> DetallePedidos { get; set; }
+    public virtual DbSet<DetallePedidos> DetallePedidos { get; set; }
 
-    public virtual DbSet<Pedido> Pedidos { get; set; }
+    public virtual DbSet<Pedidos> Pedidos { get; set; }
 
-    public virtual DbSet<Producto> Productos { get; set; }
+    public virtual DbSet<Productos> Productos { get; set; }
 
-    public virtual DbSet<Proveedore> Proveedores { get; set; }
+    public virtual DbSet<Proveedores> Proveedores { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Cliente>(entity =>
+        modelBuilder.Entity<Clientes>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Clientes__3214EC07D649EDA9");
 
@@ -48,7 +48,7 @@ public partial class ProductManagementContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<DetallePedido>(entity =>
+        modelBuilder.Entity<DetallePedidos>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__DetalleP__3214EC073C09C1A2");
 
@@ -68,7 +68,7 @@ public partial class ProductManagementContext : DbContext
                 .HasConstraintName("FK__DetallePe__Produ__49C3F6B7");
         });
 
-        modelBuilder.Entity<Pedido>(entity =>
+        modelBuilder.Entity<Pedidos>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Pedidos__3214EC07AF6FEA41");
 
@@ -83,7 +83,7 @@ public partial class ProductManagementContext : DbContext
                 .HasConstraintName("FK__Pedidos__Cliente__45F365D3");
         });
 
-        modelBuilder.Entity<Producto>(entity =>
+        modelBuilder.Entity<Productos>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Producto__3214EC0766318104");
 
@@ -102,7 +102,7 @@ public partial class ProductManagementContext : DbContext
                 .HasConstraintName("FK__Productos__Prove__412EB0B6");
         });
 
-        modelBuilder.Entity<Proveedore>(entity =>
+        modelBuilder.Entity<Proveedores>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Proveedo__3214EC0765041B1E");
 

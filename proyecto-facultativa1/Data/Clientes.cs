@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace proyecto_facultativa1.Data;
 
-public partial class Cliente
+public partial class Clientes
 {
     public int Id { get; set; }
 
@@ -17,5 +17,5 @@ public partial class Cliente
 
     public DateTime? FechaRegistro { get; set; }
 
-    public virtual ICollection<Pedido> Pedidos { get; set; } = new List<Pedido>();
+    public virtual ICollection<Pedidos> Pedidos { get; set; } = new List<Pedidos>();
 }

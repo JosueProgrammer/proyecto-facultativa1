@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace proyecto_facultativa1.Data;
 
-public partial class DetallePedido
+public partial class DetallePedidos
 {
     public int Id { get; set; }
 
@@ -17,7 +17,7 @@ public partial class DetallePedido
 
     public decimal? Subtotal { get; set; }
 
-    public virtual Pedido Pedido { get; set; } = null!;
+    public virtual Pedidos Pedido { get; set; } = null!;
 
-    public virtual Producto Producto { get; set; } = null!;
+    public virtual Productos Producto { get; set; } = null!;
 }
