@@ -21,6 +21,10 @@ builder.Services.AddDbContext<ProductManagementContext>(options =>
 builder.Services.AddScoped <ICrud<Productos>, ProductoRepository>();
 builder.Services.AddScoped<ICrudServices<ProductoResponseDto, ProductoInsertDto, ProductoUpdateDto>, ProductoServices>();
 
+
+builder.Services.AddScoped<ICrud<Proveedores>, ProveedorRepository>();
+builder.Services.AddScoped<ICrudServices<ProveedoresResponseDto, ProveedoresInsertDto, ProveedoresUpdateDto>, ProveedoresServices>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

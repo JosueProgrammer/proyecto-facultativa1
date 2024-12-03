@@ -4,8 +4,8 @@
     {
         Task<IEnumerable<T>> GetAll();
         Task<T> GetById(int id);
-        Task<T> Add(TI product);
-        Task<T> Update(int id, TU product);
+        Task<T> Add(TI entity);
+        Task<T> Update(int id, TU entity);
         Task<T> Delete(int id);
     }
 }

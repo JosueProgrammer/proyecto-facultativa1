@@ -10,9 +10,9 @@ public partial class ProductManagementContext : DbContext
     {
     }
 
-    public ProductManagementContext(DbContextOptions<ProductManagementContext> options)
-        : base(options)
+    public ProductManagementContext(DbContextOptions<ProductManagementContext> options): base(options)
     {
+
     }
 
     public virtual DbSet<Clientes> Clientes { get; set; }
