@@ -76,6 +76,7 @@ namespace proyecto_facultativa1.Services
                     Precio = producto.Precio,
                     Stock = producto.Stock,
                     ProveedorId = producto.ProveedorId,
+                    ProveedorNombre = producto.Proveedor.Nombre,
                     FechaCreacion = producto.FechaCreacion,
              };
 
@@ -105,6 +106,7 @@ namespace proyecto_facultativa1.Services
                     Precio = Producto.Precio,
                     Stock = Producto.Stock,
                     ProveedorId = Producto.ProveedorId,
+                    ProveedorNombre = Producto.Proveedor.Nombre,
                     FechaCreacion = Producto.FechaCreacion
                 };
 
@@ -131,6 +133,7 @@ namespace proyecto_facultativa1.Services
                     Precio = productoDto.Precio,
                     Stock = productoDto.Stock,
                     ProveedorId = productoDto.ProveedorId,
+                    ProveedorNombre = productoDto.Proveedor.Nombre,
                     FechaCreacion = productoDto.FechaCreacion
                 };
 
