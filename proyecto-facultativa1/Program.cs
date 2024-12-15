@@ -18,9 +18,12 @@ builder.Services.AddDbContext<ProductManagementContext>(options =>
 
 // Registrar servicios y repositorios
 builder.Services.AddScoped<ICrud<Productos>, ProductoRepository>();
-builder.Services.AddScoped<ICrudServices<ProductoResponseDto, ProductoInsertDto, ProductoUpdateDto>, ProductoServices>();
-
+builder.Services.AddScoped<ICrud<Clientes>, ClienteRepository>();
 builder.Services.AddScoped<ICrud<Proveedores>, ProveedorRepository>();
+
+//servicios
+builder.Services.AddScoped<ICrudServices<ClienteResponseDto, ClienteInsertDto, ClienteUpdateDto>, ClienteServices>();
+builder.Services.AddScoped<ICrudServices<ProductoResponseDto, ProductoInsertDto, ProductoUpdateDto>, ProductoServices>();
 builder.Services.AddScoped<ICrudServices<ProveedoresResponseDto, ProveedoresInsertDto, ProveedoresUpdateDto>, ProveedoresServices>();
 
 var app = builder.Build();
@@ -32,16 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Configuración para habilitar o deshabilitar redirección HTTPS
-if (!builder.Configuration.GetValue<bool>("DisableHttpsRedirection"))
-{
-    app.UseHttpsRedirection();
-}
-else
-{
-    Console.WriteLine("Redirección HTTPS está deshabilitada según la configuración.");
-}
-
+app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
