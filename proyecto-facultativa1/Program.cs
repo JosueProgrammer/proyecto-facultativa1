@@ -20,11 +20,13 @@ builder.Services.AddDbContext<ProductManagementContext>(options =>
 builder.Services.AddScoped<ICrud<Productos>, ProductoRepository>();
 builder.Services.AddScoped<ICrud<Clientes>, ClienteRepository>();
 builder.Services.AddScoped<ICrud<Proveedores>, ProveedorRepository>();
+builder.Services.AddScoped<ICrud<Pedidos>, PedidosRepository>();    
 
 //servicios
 builder.Services.AddScoped<ICrudServices<ClienteResponseDto, ClienteInsertDto, ClienteUpdateDto>, ClienteServices>();
 builder.Services.AddScoped<ICrudServices<ProductoResponseDto, ProductoInsertDto, ProductoUpdateDto>, ProductoServices>();
 builder.Services.AddScoped<ICrudServices<ProveedoresResponseDto, ProveedoresInsertDto, ProveedoresUpdateDto>, ProveedoresServices>();
+builder.Services.AddScoped<ICrudServices<PedidoResponseDto, PedidoInsertDto, PedidoUpdateDto>, PedidoServices>();   
 
 var app = builder.Build();
 

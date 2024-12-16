@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proyecto_facultativa1.Data;
 
@@ -15,7 +16,8 @@ public partial class DetallePedidos
 
     public decimal PrecioUnitario { get; set; }
 
-    public decimal? Subtotal { get; set; }
+    private decimal _subtotal;
+    public decimal Subtotal => Cantidad * PrecioUnitario;
 
     public virtual Pedidos Pedido { get; set; } = null!;
 

@@ -11,9 +11,9 @@ public partial class Pedidos
 
     public DateTime? FechaPedido { get; set; }
 
-    public decimal Total { get; set; }
-
     public virtual Clientes Cliente { get; set; } = null!;
+
+    public decimal TotalCalculado => DetallePedidos.Sum(d => d.Subtotal);
 
     public virtual ICollection<DetallePedidos> DetallePedidos { get; set; } = new List<DetallePedidos>();
 }
